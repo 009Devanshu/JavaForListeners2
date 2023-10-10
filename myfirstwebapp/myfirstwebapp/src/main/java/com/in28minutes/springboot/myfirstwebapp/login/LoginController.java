@@ -16,6 +16,10 @@ public class LoginController {
 	@RequestMapping("login")
 	public String gotoLoginPage(@RequestParam String name, ModelMap model) {
 		model.put("name", name);
+		logger.debug("Request Param is {}"+name);
+		logger.info("I want this to be printed at info level");
+		logger.warn("I want this to be printed at warn level");
+		System.out.println("Request Param is: "+name); //Not recommended for PROD Code
 		return "login";
 	}
 }
